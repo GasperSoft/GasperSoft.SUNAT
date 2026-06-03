@@ -388,6 +388,17 @@ namespace GasperSoft.SUNAT
                 return false;
             }
 
+            if (_gre.datosEnvio.modalidadTraslado == "01" && !_gre.datosEnvio.fechaEntregaBienesTransportista.HasValue)
+            {
+                _mensajesError.AddMensaje(CodigoError.S3617, "datosEnvio.fechaEntregaBienesTransportista");
+                return false;
+            }
+            else if (_gre.datosEnvio.fechaEntregaBienesTransportista.HasValue && _gre.datosEnvio.fechaEntregaBienesTransportista.Value.Date < _gre.fechaEmision.Date)
+            {
+                _mensajesError.AddMensaje(CodigoError.S3618, "datosEnvio.fechaEntregaBienesTransportista");
+                return false;
+            }
+
             #region  Traslado en vehículos de categoría M1 o L
 
             if ((_gre.datosEnvio.indicadoresGRERemitente?.indTrasladoVehiculoM1L ?? false) == true)
@@ -466,7 +477,7 @@ namespace GasperSoft.SUNAT
 
             #endregion
 
-            #region Fecha inicio translado
+            #region Fecha inicio traslado
 
             if (_gre.datosEnvio.fechaInicioTraslado.Date < _gre.fechaEmision.Date)
             {

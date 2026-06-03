@@ -78,6 +78,8 @@ namespace GasperSoft.SUNAT
         public const string S3404 = "S3404:El XML no contiene el tag o no existe informacion del motivo de traslado";
         public const string S3405 = "S3405:El valor ingresado como motivo de traslado no es valido(El valor no existe el catálogo N° 20)";
         public const string S3462 = "S3462:La tasa del IGV debe ser la misma en todas las líneas o ítems del documento y debe corresponder con una tasa vigente";
+        public const string S3617 = "S3617:No ha ingresado el campo de 'Fecha de entrega de bienes al transportista' o esta vacio";
+        public const string S3618 = "S3618:La Fecha de entrega de bienes al transportista debe ser mayor o igual a la Fecha de emision del documento";
         public const string S4085 = "S4085:Código del Ítem - El dato ingresado no cumple con el formato establecido";
         public const string S4233 = "S4233:El dato ingresado en order de compra no cumple con el formato establecido";
         public const string S4269 = "S4269:El dato ingresado como codigo de producto no cumple con el formato establecido";

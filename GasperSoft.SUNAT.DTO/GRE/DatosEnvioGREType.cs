@@ -50,6 +50,12 @@ namespace GasperSoft.SUNAT.DTO.GRE
         public DateTime fechaInicioTraslado { get; set; }
 
         /// <summary>
+        /// Fecha de entrega de bienes al transportista 
+        /// Obligatorio si Modalidad de traslado es '01' (Transporte público)
+        /// </summary>
+        public DateTime? fechaEntregaBienesTransportista { get; set; }
+
+        /// <summary>
         /// Número de placa(s) del vehiculo
         /// </summary>
         //[Obsolete("Usar la propiedad \"vehículos\" para asignar información de los vehículos usados en el transporte")]

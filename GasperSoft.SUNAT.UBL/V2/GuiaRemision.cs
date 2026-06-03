@@ -4,6 +4,7 @@
 
 using GasperSoft.SUNAT.DTO;
 using GasperSoft.SUNAT.DTO.GRE;
+using System;
 using System.Collections.Generic;
 
 namespace GasperSoft.SUNAT.UBL.V2
@@ -514,7 +515,16 @@ namespace GasperSoft.SUNAT.UBL.V2
                                 {
                                     Value = datos.datosEnvio.fechaInicioTraslado
                                 }
-                            }
+                            },
+
+                            //Fecha de entrega de los bienes al transportista
+                            LoadingTransportEvent = datos.datosEnvio.fechaEntregaBienesTransportista != null ? new TransportEventType()
+                            {
+                                OccurrenceDate = new OccurrenceDateType()
+                                {
+                                    Value = (DateTime)datos.datosEnvio.fechaEntregaBienesTransportista
+                                }
+                            } : null
                         }
                     },
 
