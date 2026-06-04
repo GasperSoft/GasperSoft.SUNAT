@@ -683,6 +683,7 @@ namespace GasperSoft.SUNAT
             var _existeItemExportacion = false;
             int _totalItemsExportacion = 0;
             var _esNotaCreditoMotivo13 = false;
+            var _esNotaCreditoMotivo03 = false;
             var _esNotaCreditoDebito = false;
             decimal _tasaIGVOperacionesGravadas = 0;
 
@@ -745,6 +746,16 @@ namespace GasperSoft.SUNAT
                                 }
                             }
 
+                            if (item.tipoNota == "03")
+                            {
+                                if (_cpe.importeTotal > 0)
+                                {
+                                    _mensajesError.AddMensaje(CodigoError.V0021);
+                                    return false;
+                                }
+                                _esNotaCreditoMotivo03 = true;
+                            }
+
                             if (item.tipoNota == "13")
                             {
                                 if (_cpe.importeTotal > 0)
@@ -752,7 +763,6 @@ namespace GasperSoft.SUNAT
                                     _mensajesError.AddMensaje(CodigoError.V0021);
                                     return false;
                                 }
-
                                 _esNotaCreditoMotivo13 = true;
                             }
                         }
@@ -1164,7 +1174,7 @@ namespace GasperSoft.SUNAT
 
                 #endregion
 
-                if (_valorCalculoValidado && !_esNotaCreditoMotivo13)
+                if (_valorCalculoValidado && !_esNotaCreditoMotivo13 && !_esNotaCreditoMotivo03)
                 {
                     #region TasaIGV
 
@@ -1420,7 +1430,7 @@ namespace GasperSoft.SUNAT
                     }
                 }
 
-                if (_esNotaCreditoMotivo13)
+                if (_esNotaCreditoMotivo13 || _esNotaCreditoMotivo03)
                 {
                     if (item.valorVentaUnitario > 0)
                     {
@@ -1866,10 +1876,10 @@ namespace GasperSoft.SUNAT
             {
                 bool _validarInformacionPago = true;
 
-                //Solo permitir informacionPago para Facturas y Notas de Credito Motivo 13
-                if (_cpe.tipoDocumento != "01" && !_esNotaCreditoMotivo13)
+                //Solo permitir informacionPago para Facturas y Notas de Credito Motivo 13 o 03
+                if (_cpe.tipoDocumento != "01" && !_esNotaCreditoMotivo13 && !_esNotaCreditoMotivo03)
                 {
-                    _mensajesError.AddMensaje(CodigoError.V4018);
+                    _mensajesError.AddMensaje(CodigoError.V0042);
                     _validarInformacionPago = false;
                 }
 

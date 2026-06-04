@@ -113,8 +113,8 @@ namespace GasperSoft.SUNAT
         public const string V0018 = "V0018:La propiedad 'indTransferenciaGratuita' solo puede ser verdadera cuando todos los detalles del comprobante tienen un código de afectación del IGV no oneroso";
         public const string V0019 = "V0019:El valor no existe el catálogo N° 09";
         public const string V0020 = "V0020:El valor no existe el catálogo N° 10";
-        public const string V0021 = "V0021:Las notas de crédito motivo 13 (Ajustes – montos y/o fechas de pago), deben tener 'impoteTotal' igual a cero";
-        public const string V0022 = "V0022:El valor de la propiedad debe ser cero, para notas de crédito motivo 13 (Ajustes – montos y/o fechas de pago)";
+        public const string V0021 = "V0021:Las notas de crédito motivo 03 o 13, deben tener 'impoteTotal' igual a cero";
+        public const string V0022 = "V0022:El valor de la propiedad debe ser cero, para notas de crédito motivo 03 o13";
         public const string V0023 = "V0023:El valor de la propiedad 'tasaIsc' no es válido, si el ítem no está afecto al ISC asigne 0 a la propiedad 'montoIsc'";
         public const string V0024 = "V0024:El valor de la propiedad 'codSistemaCalculoIsc' no es válido, si el ítem no está afecto al ISC asigne 0 a la propiedad 'montoIsc'";
         public const string V0025 = "V0025:El valor de la propiedad debe ser un valor alfanumérico de 2 a 30 caracteres, y no empiezan ni terminan con espacios en blanco";
@@ -134,6 +134,7 @@ namespace GasperSoft.SUNAT
         public const string V0039 = "V0039:El valor no existe el catálogo N° 23 o la tasa no corresponde al código de régimen de retención ingresado";
         public const string V0040 = "V0040:El valor no existe el catálogo N° 25";
         public const string V0041 = "V0041:Código de información adicional repetido";
+        public const string V0042 = "V0042:La propiedad 'informacionPago' solo es requerido para facturas y notas de crédito motivo 03 o 13";
 
         //Mensajes genericos para validar una propiedad
         public const string V0101 = "V0101:El valor de la propiedad deber ser NULL";
@@ -147,7 +148,6 @@ namespace GasperSoft.SUNAT
         #region Codigos de la libreria que se puede ignorar(comienzan con V4XXX)
 
         public const string V4008 = "V4008:La propiedad no se aplica a Notas de crédito o débito";
-        public const string V4018 = "V4018:La propiedad 'informacionPago' solo es requerido para facturas y notas de crédito motivo 13";
 
         #endregion
     }
