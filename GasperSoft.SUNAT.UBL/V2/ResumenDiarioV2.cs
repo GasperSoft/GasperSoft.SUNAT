@@ -90,40 +90,40 @@ namespace GasperSoft.SUNAT.UBL.V2
                     },
 
                     TaxSubtotal = new TaxSubtotalType[]
-                {
-                    new TaxSubtotalType()
                     {
-                        TaxAmount = new TaxAmountType()
+                        new TaxSubtotalType()
                         {
-                            currencyID = _codMoneda,
-                            Value = item.sumatoriaISC
-                        },
-
-                        TaxCategory =new TaxCategoryType()
-                        {
-                            TaxScheme = new TaxSchemeType()
+                            TaxAmount = new TaxAmountType()
                             {
-                                //Código de tributo - Catálogo No. 05 (an4)
-                                ID = new IDType()
-                                {
-                                    Value ="2000"
-                                },
+                                currencyID = _codMoneda,
+                                Value = item.sumatoriaISC
+                            },
 
-                                //Nombre de tributo - Catálogo No. 05 (an..6)
-                                Name = new NameType1()
+                            TaxCategory =new TaxCategoryType()
+                            {
+                                TaxScheme = new TaxSchemeType()
                                 {
-                                    Value = "ISC"
-                                },
+                                    //Código de tributo - Catálogo No. 05 (an4)
+                                    ID = new IDType()
+                                    {
+                                        Value ="2000"
+                                    },
 
-                                //Código internacional tributo - Catálogo No. 05 (an3)
-                                TaxTypeCode = new TaxTypeCodeType()
-                                {
-                                    Value ="EXC"
+                                    //Nombre de tributo - Catálogo No. 05 (an..6)
+                                    Name = new NameType1()
+                                    {
+                                        Value = "ISC"
+                                    },
+
+                                    //Código internacional tributo - Catálogo No. 05 (an3)
+                                    TaxTypeCode = new TaxTypeCodeType()
+                                    {
+                                        Value ="EXC"
+                                    }
                                 }
                             }
                         }
                     }
-                }
                 },
 
                 //Total IGV (M)
@@ -136,36 +136,41 @@ namespace GasperSoft.SUNAT.UBL.V2
                     },
 
                     TaxSubtotal = new TaxSubtotalType[]
-                {
-                    new TaxSubtotalType()
                     {
-                        TaxAmount = new TaxAmountType()
+                        new TaxSubtotalType()
                         {
-                            currencyID = _codMoneda,
-                            Value = item.sumatoriaIGV
-                        },
-
-                        TaxCategory = new TaxCategoryType() {
-
-                            TaxScheme = new TaxSchemeType()
+                            TaxAmount = new TaxAmountType()
                             {
-                                ID = new IDType()
-                                {
-                                    Value = "1000"
-                                },
+                                currencyID = _codMoneda,
+                                Value = item.sumatoriaIGV
+                            },
 
-                                Name = new NameType1() {
-                                    Value = "IGV"
-                                },
+                            TaxCategory = new TaxCategoryType() {
 
-                                TaxTypeCode = new TaxTypeCodeType()
+                                Percent = item.tasaIGV > 0 ? new PercentType1()
                                 {
-                                    Value = "VAT"
+                                    Value = item.tasaIGV
+                                } : null,
+
+                                TaxScheme = new TaxSchemeType()
+                                {
+                                    ID = new IDType()
+                                    {
+                                        Value = "1000"
+                                    },
+
+                                    Name = new NameType1() {
+                                        Value = "IGV"
+                                    },
+
+                                    TaxTypeCode = new TaxTypeCodeType()
+                                    {
+                                        Value = "VAT"
+                                    }
                                 }
                             }
                         }
                     }
-                }
                 }
             };
 

@@ -517,8 +517,8 @@ namespace GasperSoft.SUNAT.UBL.V2
                                 }
                             },
 
-                            //Fecha de entrega de los bienes al transportista
-                            LoadingTransportEvent = datos.datosEnvio.fechaEntregaBienesTransportista != null ? new TransportEventType()
+                            //Fecha de entrega de los bienes al transportista - solo transporte publico (modalidadTraslado = "01")
+                            LoadingTransportEvent = datos.datosEnvio.modalidadTraslado == "01" && datos.datosEnvio.fechaEntregaBienesTransportista != null ? new TransportEventType()
                             {
                                 OccurrenceDate = new OccurrenceDateType()
                                 {
@@ -801,17 +801,17 @@ namespace GasperSoft.SUNAT.UBL.V2
                     {
                         _despatchAdvice.Shipment.TransportHandlingUnit = new TransportHandlingUnitType[]
                         {
-                    new TransportHandlingUnitType()
-                    {
-                        //Numero de Contenedor
-                        TransportEquipment =new TransportEquipmentType[]
-                        {
-                            new TransportEquipmentType()
+                            new TransportHandlingUnitType()
                             {
-                                ID = new IDType() { Value = datos.datosEnvio.numeroContenedor }
+                                //Numero de Contenedor
+                                TransportEquipment =new TransportEquipmentType[]
+                                {
+                                    new TransportEquipmentType()
+                                    {
+                                        ID = new IDType() { Value = datos.datosEnvio.numeroContenedor }
+                                    }
+                                }
                             }
-                        }
-                    }
                         };
                     }
 
@@ -846,17 +846,17 @@ namespace GasperSoft.SUNAT.UBL.V2
 
                                 PartyIdentification = new PartyIdentificationType[]
                                 {
-                                new PartyIdentificationType()
-                                {
-                                    ID = new IDType()
+                                    new PartyIdentificationType()
                                     {
-                                        Value = datos.transportista.ruc,
-                                        schemeID = "6",
-                                        schemeName = "Documento de Identidad",
-                                        schemeAgencyName = "PE:SUNAT",
-                                        schemeURI = "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06"
+                                        ID = new IDType()
+                                        {
+                                            Value = datos.transportista.ruc,
+                                            schemeID = "6",
+                                            schemeName = "Documento de Identidad",
+                                            schemeAgencyName = "PE:SUNAT",
+                                            schemeURI = "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06"
+                                        }
                                     }
-                                }
                                 }
                             }
                         };

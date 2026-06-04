@@ -92,6 +92,11 @@ namespace GasperSoft.SUNAT.DTO.Resumen
         public string codMoneda { get; set; }
 
         /// <summary>
+        /// Representa el % del IGV valor del 1 al 100
+        /// </summary>
+        public decimal tasaIGV { get; set; }
+
+        /// <summary>
         /// Representa el importe total a pagar para el documento:
         /// Nota: No incluye monto de Percepcion
         /// </summary>
