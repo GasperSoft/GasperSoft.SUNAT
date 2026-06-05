@@ -147,10 +147,10 @@ namespace GasperSoft.SUNAT.UBL.V2
 
                             TaxCategory = new TaxCategoryType() {
 
-                                Percent = item.tasaIGV > 0 ? new PercentType1()
+                                Percent = new PercentType1()
                                 {
                                     Value = item.tasaIGV
-                                } : null,
+                                },
 
                                 TaxScheme = new TaxSchemeType()
                                 {
