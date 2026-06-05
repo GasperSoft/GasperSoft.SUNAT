@@ -1876,8 +1876,8 @@ namespace GasperSoft.SUNAT
             {
                 bool _validarInformacionPago = true;
 
-                //Solo permitir informacionPago para Facturas y Notas de Credito Motivo 13 o 03
-                if (_cpe.tipoDocumento != "01" && !_esNotaCreditoMotivo13 && !_esNotaCreditoMotivo03)
+                //Solo permitir informacionPago para Facturas y Notas de Credito Motivo 13
+                if (_cpe.tipoDocumento != "01" && !_esNotaCreditoMotivo13)
                 {
                     _mensajesError.AddMensaje(CodigoError.V0042);
                     _validarInformacionPago = false;
@@ -1893,7 +1893,7 @@ namespace GasperSoft.SUNAT
                         }
                         else
                         {
-                            if (_cpe.informacionPago.montoPendientePago > _cpe.importeTotal && !_esNotaCreditoMotivo13)
+                            if (_cpe.informacionPago.montoPendientePago > _cpe.importeTotal)
                             {
                                 _mensajesError.AddMensaje(CodigoError.S3265, $"cpe.informacionPago.montoPendientePago: {_cpe.informacionPago.montoPendientePago}, cpe.importeTotal: {_cpe.importeTotal}");
                             }

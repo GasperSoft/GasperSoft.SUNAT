@@ -134,7 +134,7 @@ namespace GasperSoft.SUNAT
         public const string V0039 = "V0039:El valor no existe el catálogo N° 23 o la tasa no corresponde al código de régimen de retención ingresado";
         public const string V0040 = "V0040:El valor no existe el catálogo N° 25";
         public const string V0041 = "V0041:Código de información adicional repetido";
-        public const string V0042 = "V0042:La propiedad 'informacionPago' solo es requerido para facturas y notas de crédito motivo 03 o 13";
+        public const string V0042 = "V0042:La propiedad 'informacionPago' solo es requerido para facturas y notas de crédito motivo 13";
 
         //Mensajes genericos para validar una propiedad
         public const string V0101 = "V0101:El valor de la propiedad deber ser NULL";
