@@ -418,6 +418,12 @@ namespace GasperSoft.SUNAT
                     return false;
                 }
 
+                if (_cpe.percepcion.importeTotalEnSolesConPercepcion == 0)
+                {
+                    _mensajesError.AddMensaje(CodigoError.V2000, $"si envia informacion en la propiedad percepcion, percepcion.importeTotalEnSolesConPercepcion debe ser mayor a 0.00");
+                    return false;
+                }
+
                 var _importePercepcionCalculado = _cpe.percepcion.montoBase * _cpe.percepcion.tasa;
 
                 if (!ValidarToleranciaCalculo(_cpe.percepcion.importe, decimal.Round(_importePercepcionCalculado, 2), _toleranciaCalculo))
@@ -1859,11 +1865,35 @@ namespace GasperSoft.SUNAT
                     return false;
                 }
 
+                if (_cpe.retencion.importe == 0)
+                {
+                    _mensajesError.AddMensaje(CodigoError.V2000, $"si envia informacion en la propiedad retencion, retencion.importe debe ser mayor a 0.00");
+                    return false;
+                }
+
                 var _rentencionCalculado = _cpe.retencion.montoBase * _cpe.retencion.tasa;
 
-                if (!ValidarToleranciaCalculo(_cpe.retencion.importe, decimal.Round(_rentencionCalculado, 2), _toleranciaCalculo))
+                if (!ValidarToleranciaCalculo(_cpe.retencion.importe, decimal.Round(_rentencionCalculado, 0, MidpointRounding.AwayFromZero), _toleranciaCalculo))
                 {
                     _mensajesError.AddMensaje(CodigoError.V2000, $"retencion.importe incorrecto Valor enviado: {_cpe.retencion.importe} Valor calculado: {decimal.Round(_rentencionCalculado, 2)}; Formula: retencion.importe = retencion.montoBase * retencion.tasa");
+                    return false;
+                }
+            }
+
+            if (_cpe.detraccion != null)
+            {
+                if (_cpe.detraccion.importe == 0)
+                {
+                    _mensajesError.AddMensaje(CodigoError.V2000, $"si envia informacion en la propiedad detraccion, detraccion.importe debe ser mayor a 0.00");
+                    return false;
+                }
+
+                var _detraccionCalculado = _cpe.detraccion.importe * _cpe.detraccion.porcentaje / 100;
+
+                //La detraccion siempre es un numero redondeado sin decimales, por eso se redondea el calculo a 0 decimales para la comparacion
+                if (!ValidarToleranciaCalculo(_cpe.detraccion.importe, decimal.Round(_detraccionCalculado, 0, MidpointRounding.AwayFromZero), _toleranciaCalculo))
+                {
+                    _mensajesError.AddMensaje(CodigoError.V2000, $"detraccion.importe incorrecto Valor enviado: {_cpe.detraccion.importe} Valor calculado: {decimal.Round(_detraccionCalculado, 2)}; Formula: detraccion.importe = detraccion.montoBase * detraccion.porcentaje / 100");
                     return false;
                 }
             }
