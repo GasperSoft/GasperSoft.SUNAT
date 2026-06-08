@@ -69,6 +69,7 @@ namespace Pruebas
                     unidadMedidaPesoBruto = "KGM",//Catalogo N° 03
                     modalidadTraslado = "01",//Catalogo N° 18
                     fechaInicioTraslado = DateTime.Now.Date.AddDays(1),
+                    fechaEntregaBienesTransportista = DateTime.Now.Date.AddDays(1),
                     puntoLlegada = new InfoDireccionGREType()
                     {
                         ubigeo = "250101",

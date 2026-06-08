@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <DespatchAdvice xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
   <ext:UBLExtensions>
-    <ext:UBLExtension><ext:ExtensionContent><Signature Id="signatureMIEMPRESA" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>ahjcgeS4IuwrvOPHB7Up2eBAPps70XMsAzxwJT5w/Vg=</DigestValue></Reference></SignedInfo><SignatureValue>f39OVFrNMAaH2+m3SeDAFp/g3uxGFNbzsLerQrfpX2QyjngxZROrve6ttlh22VL04P7HR5SxZIUM+1pTldpaCesGTsaMqhrqzRXZxYpyvNcD2mZBomsn9Q3XTmwvCk0Rn2koBvsnY32CA7v5SRbYwreBhsVMYCQ/8ZrqRUd6MyUlcGXRVd/mpafPSGIgIDm6NEdnDSZvfE+fUyvH45FDazLfA+jOkg7TDMHGdpU4Xiviq6/bxC1nsf78yHMDSJgNf+hVzbRLaptbiQfOZKJD1Avj61JNHsfqljld5AyVD+C2vpFFi7q71x2xD6rnYBBQOm0AQ+0koVW5WmboDP7yqA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>E=demo@llama.pe, CN=NOMBRE REPRESENTANTE LEGAL - CERTIFICADO PARA DEMOSTRACIÓN, OU=DNI 9999999 RUC 20606433094 - CERTIFICADO PARA DEMOSTRACIÓN, O=TU EMPRESA S.A., L=LIMA, S=LIMA, C=PE, DC=LLAMA.PE SA</X509SubjectName><X509Certificate>MIIFCDCCA/CgAwIBAgIJAJmqr0ynYmE7MA0GCSqGSIb3DQEBCwUAMIIBDTEbMBkGCgmSJomT8ixkARkWC0xMQU1BLlBFIFNBMQswCQYDVQQGEwJQRTENMAsGA1UECAwETElNQTENMAsGA1UEBwwETElNQTEYMBYGA1UECgwPVFUgRU1QUkVTQSBTLkEuMUUwQwYDVQQLDDxETkkgOTk5OTk5OSBSVUMgMjA2MDY0MzMwOTQgLSBDRVJUSUZJQ0FETyBQQVJBIERFTU9TVFJBQ0nDk04xRDBCBgNVBAMMO05PTUJSRSBSRVBSRVNFTlRBTlRFIExFR0FMIC0gQ0VSVElGSUNBRE8gUEFSQSBERU1PU1RSQUNJw5NOMRwwGgYJKoZIhvcNAQkBFg1kZW1vQGxsYW1hLnBlMB4XDTI0MTEyMDA0NTA1NVoXDTI2MTEyMDA0NTA1NVowggENMRswGQYKCZImiZPyLGQBGRYLTExBTUEuUEUgU0ExCzAJBgNVBAYTAlBFMQ0wCwYDVQQIDARMSU1BMQ0wCwYDVQQHDARMSU1BMRgwFgYDVQQKDA9UVSBFTVBSRVNBIFMuQS4xRTBDBgNVBAsMPEROSSA5OTk5OTk5IFJVQyAyMDYwNjQzMzA5NCAtIENFUlRJRklDQURPIFBBUkEgREVNT1NUUkFDScOTTjFEMEIGA1UEAww7Tk9NQlJFIFJFUFJFU0VOVEFOVEUgTEVHQUwgLSBDRVJUSUZJQ0FETyBQQVJBIERFTU9TVFJBQ0nDk04xHDAaBgkqhkiG9w0BCQEWDWRlbW9AbGxhbWEucGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCUDtOx/MgUiW76TbmmupAVs3LygXjKcPWIdXSjiKEWqJSPY0Xox2XQOVGlYi+HGKOH4HaNUeB8p5kNHuwrXRNUzbI1mvxdSA9ndxSvVcBSzZlB7xqhn2P2Ow4BaKEyXZA91P1ZM+4jhvtF3OiUSlASG1xFTWhAy0VcnDg9hCAW72ptYelO67AezvBZRltQqNb/T9oQU2Yw9+0cmHCdnylPh3FuDuJ8kW57p1Z7HSObUa7UXZEJJIq+6EhpNMLjZZYxIdydo74yTKLb8ZiZa41o7B8dSriUQ6X9T9FPPaUh6nZveIqeJ83QOXxLacfcNMbMLlsG8/6Mn+86uIgOQGMLAgMBAAGjZzBlMB0GA1UdDgQWBBR+0+UPrYXy+5N7gj+8gTVXIAuSCzAfBgNVHSMEGDAWgBR+0+UPrYXy+5N7gj+8gTVXIAuSCzATBgNVHSUEDDAKBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBAAiZn7bC8dBEIXwsz+N+N5AAOgS4EIAlbQhqtLAxSCAuQadaS2zUfwlYJ6Kr4FzQtLtpCXJbLdW2Cu1a43dDkHICVCE/71ENmwP6MQGgf3YYSn5/8s0Jivb3KXsRlu95GN36KB5T48mpmzMtz5VcICcf2orfQxeD4upD+d29jJ59xPlPNHNj3iw5yHiF9zLCCTaZSDsFXfQOmnSNWVObdULzT3nvE1wSqes7WRqz3q9m4raCDQChllgZdsZqvqAaFD1glT2RY7MBExueXcxSPQGPXIvAg9rygZCXOsGBEWodsoFECgbdzTo16cqpA9t5v2wYm8myw0vw6rl9xfuQSXA=</X509Certificate></X509Data></KeyInfo></Signature></ext:ExtensionContent></ext:UBLExtension>
+    <ext:UBLExtension>
+      <ext:ExtensionContent><Signature Id="signatureMIEMPRESA" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" /><DigestValue>fFvnpfXVWHV0UgqjZZgzZD/cnhFvBIVUvpDKWBZXQ0o=</DigestValue></Reference></SignedInfo><SignatureValue>MXn5G0K4XnJPfdod821bUyHc6odqdiF/RHxTt36bTpZoCbCm9OrAQCkrHNbm2bqd9MIfXxYxc/IvXZEc8adjeMTU2fB9hDVFkMEKGFMy/rPJ7k19ow7uKFFs9SkE0VtLW4gqJIAWkO8jf0WRlkfh1IImOtjNBM5mhIZxzSKnXDRNJUP//n1YlxC/KwOUzGaPjRFyOgIETFbVkZA+ApyWYAnCd5JuGiblGColnUidVV4KCgmYO0kAOEQB0dMr8/shb0YlknfsvcyjkAlaZkZH8ffSPyFDPUMYySK10+i9FB1GsIdQ0LppUWqL7fte1cWBAlJCMdF2yQ6ec1FXb3fmBA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>E=demo@llama.pe, CN=NOMBRE REPRESENTANTE LEGAL - CERTIFICADO PARA DEMOSTRACIÓN, OU=DNI 9999999 RUC 20606433094 - CERTIFICADO PARA DEMOSTRACIÓN, O=TU EMPRESA S.A., L=LIMA, S=LIMA, C=PE, DC=LLAMA.PE SA</X509SubjectName><X509Certificate>MIIFCDCCA/CgAwIBAgIJAJC4aOs5cMRWMA0GCSqGSIb3DQEBCwUAMIIBDTEbMBkGCgmSJomT8ixkARkWC0xMQU1BLlBFIFNBMQswCQYDVQQGEwJQRTENMAsGA1UECAwETElNQTENMAsGA1UEBwwETElNQTEYMBYGA1UECgwPVFUgRU1QUkVTQSBTLkEuMUUwQwYDVQQLDDxETkkgOTk5OTk5OSBSVUMgMjA2MDY0MzMwOTQgLSBDRVJUSUZJQ0FETyBQQVJBIERFTU9TVFJBQ0nDk04xRDBCBgNVBAMMO05PTUJSRSBSRVBSRVNFTlRBTlRFIExFR0FMIC0gQ0VSVElGSUNBRE8gUEFSQSBERU1PU1RSQUNJw5NOMRwwGgYJKoZIhvcNAQkBFg1kZW1vQGxsYW1hLnBlMB4XDTI0MTIxNTA5MjM0M1oXDTI2MTIxNTA5MjM0M1owggENMRswGQYKCZImiZPyLGQBGRYLTExBTUEuUEUgU0ExCzAJBgNVBAYTAlBFMQ0wCwYDVQQIDARMSU1BMQ0wCwYDVQQHDARMSU1BMRgwFgYDVQQKDA9UVSBFTVBSRVNBIFMuQS4xRTBDBgNVBAsMPEROSSA5OTk5OTk5IFJVQyAyMDYwNjQzMzA5NCAtIENFUlRJRklDQURPIFBBUkEgREVNT1NUUkFDScOTTjFEMEIGA1UEAww7Tk9NQlJFIFJFUFJFU0VOVEFOVEUgTEVHQUwgLSBDRVJUSUZJQ0FETyBQQVJBIERFTU9TVFJBQ0nDk04xHDAaBgkqhkiG9w0BCQEWDWRlbW9AbGxhbWEucGUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC2ZKO2IDtvveLCmcK+cwa9vRaZw/T70evViom5kf+V4KnamKRekRVQjcsVlmsxq0+NHerEdZnD58oC0855aRVutSqcD7+pFKJ0/Jc45IgwK7ktK38tlUbj8i90Gk4asLaSe+iYVgqNuolIrRWMhe7ZZL8ex7O2Mi1nwFx9IYxap0D3ORehLjrbbzvQV/WJwsXjZNRiwb/WddNfQo2EE4/ossEIqx2tLpTkJQg1Fp+jI9EjFT3CHlJ9GzO1FV8LYrnQvGtdNiJZWTvHvx5jMG51zvMweQxK6HYOAeonEkd71v6pxRaFhLIZPYHoM5m52T47yZ8Wp/EVvul2z1S02azHAgMBAAGjZzBlMB0GA1UdDgQWBBSLk9AuKwg7/PbH2bOMsZf0GFS6rjAfBgNVHSMEGDAWgBSLk9AuKwg7/PbH2bOMsZf0GFS6rjATBgNVHSUEDDAKBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMCB4AwDQYJKoZIhvcNAQELBQADggEBABZYzgCUbndFOCEghmcEYjcG7ZnuoyotFWsA7AuL3mGD6O/Y4nSk1XQOGX3mw1G8g8LGSdhOFXJDTJh4Fi45GaBtaJUTMZLLFTbqc5u2yJjBgozHjOQOQwULdej16WcYuGlmSCMT+FEjgyFejYBFQ0rB5jUhv2AZQ4sf7eG8PCQPaN3gbS3dSi42gCG+cg5G3ioIIzU4j0AvkG9K0jMJ6PMU4KmqpOU1XJAyzft4bmqj4rytFISzmWModUe0W4bFQWIfgr6PFd8aC3KviTFODUKk6OnDNowkpCwQSWr+XJc0p7JFHajBCc4XWpuRHRSCYiZwC0l7/hYm/2gfLohoNV8=</X509Certificate></X509Data></KeyInfo></Signature></ext:ExtensionContent>
+    </ext:UBLExtension>
   </ext:UBLExtensions>
   <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
   <cbc:CustomizationID schemeAgencyName="PE:SUNAT">2.0</cbc:CustomizationID>
   <cbc:ID>T001-1</cbc:ID>
-  <cbc:IssueDate>2024-11-25</cbc:IssueDate>
-  <cbc:IssueTime>05:27:12</cbc:IssueTime>
+  <cbc:IssueDate>2026-06-08</cbc:IssueDate>
+  <cbc:IssueTime>02:40:28</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Documento" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01">09</cbc:DespatchAdviceTypeCode>
   <cac:Signature>
     <cbc:ID>signatureMIEMPRESA</cbc:ID>
@@ -53,7 +55,7 @@
     <cac:ShipmentStage>
       <cbc:TransportModeCode listAgencyName="PE:SUNAT" listName="Modalidad de traslado" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo18">01</cbc:TransportModeCode>
       <cac:TransitPeriod>
-        <cbc:StartDate>2024-11-26</cbc:StartDate>
+        <cbc:StartDate>2026-06-09</cbc:StartDate>
       </cac:TransitPeriod>
       <cac:CarrierParty>
         <cac:PartyIdentification>
@@ -63,6 +65,9 @@
           <cbc:RegistrationName>CHOCANO CARGO S.A.C.</cbc:RegistrationName>
         </cac:PartyLegalEntity>
       </cac:CarrierParty>
+      <cac:LoadingTransportEvent>
+        <cbc:OccurrenceDate>2026-06-09</cbc:OccurrenceDate>
+      </cac:LoadingTransportEvent>
     </cac:ShipmentStage>
     <cac:Delivery>
       <cac:DeliveryAddress>
@@ -83,7 +88,7 @@
   </cac:Shipment>
   <cac:DespatchLine>
     <cbc:ID>1</cbc:ID>
-    <cbc:DeliveredQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyName="United Nations Economic Commission for Europe">2.00</cbc:DeliveredQuantity>
+    <cbc:DeliveredQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyName="United Nations Economic Commission for Europe">2.0000000000</cbc:DeliveredQuantity>
     <cac:OrderLineReference>
       <cbc:LineID>1</cbc:LineID>
     </cac:OrderLineReference>
