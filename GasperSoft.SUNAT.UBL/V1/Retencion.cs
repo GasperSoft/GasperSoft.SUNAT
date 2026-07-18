@@ -304,9 +304,10 @@ namespace GasperSoft.SUNAT.UBL.V1
         /// </summary>
         /// <param name="datos">Informacion del comprobante</param>
         /// <param name="emisor">Informacion del emisor</param>
+        /// <param name="padNumeroConCeros">Indica si el número del comprobante debe rellenarse con ceros a la izquierda</param>
         /// <param name="signature">Una cadena de texto que se usa para "Signature ID", Por defecto se usará la cadena predeterminada "signatureGASPERSOFT"</param>
         /// <returns>RetentionType con la informacion del documento</returns>
-        public static RetentionType GetDocumento(CREType datos, EmisorType emisor, string signature = null)
+        public static RetentionType GetDocumento(CREType datos, EmisorType emisor, bool padNumeroConCeros = false, string signature = null)
         {
             var _retention = new RetentionType()
             {
@@ -329,7 +330,7 @@ namespace GasperSoft.SUNAT.UBL.V1
                 Signature = Comun.GetSignature(emisor, signature)[0],
 
                 //Serie y número del comprobante "R###-NNNNNNNN"
-                ID = new IDType() { Value = $"{datos.serie}-{datos.numero}" },
+                ID = new IDType() { Value = padNumeroConCeros ? $"{datos.serie}-{datos.numero:D8}" : $"{datos.serie}-{datos.numero}" },
 
                 //Fecha de Emision (an..10 M)
                 IssueDate = new IssueDateType() { Value = datos.fechaEmision },
