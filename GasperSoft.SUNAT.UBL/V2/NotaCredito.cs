@@ -145,9 +145,10 @@ namespace GasperSoft.SUNAT.UBL.V2
         /// </summary>
         /// <param name="datos">Informacion del comprobante</param>
         /// <param name="emisor">Informacion del emisor</param>
+        /// <param name="padNumeroConCeros">Si es true, el número del comprobante se formatea con 8 dígitos rellenando con ceros a la izquierda</param>
         /// <param name="signature">Una cadena de texto que se usa para "Signature ID", Por defecto se usará la cadena predeterminada "signatureGASPERSOFT"</param>
         /// <returns>CreditNoteType con la informacion del documento</returns>
-        public static CreditNoteType GetDocumento(CPEType datos, EmisorType emisor, string signature = null)
+        public static CreditNoteType GetDocumento(CPEType datos, EmisorType emisor, bool padNumeroConCeros = false, string signature = null)
         {
             var _creditNote = new CreditNoteType()
             {
@@ -165,7 +166,7 @@ namespace GasperSoft.SUNAT.UBL.V2
                 },
 
                 //Serie y número del comprobante "F###-NNNNNNNN"
-                ID = new IDType() { Value = $"{datos.serie}-{datos.numero}" },
+                ID = new IDType() { Value = padNumeroConCeros ? $"{datos.serie}-{datos.numero:D8}" : $"{datos.serie}-{datos.numero}" },
 
                 //Fecha de Emision (YYYY-MM-DD M)
                 IssueDate = new IssueDateType() { Value = datos.fechaEmision },
