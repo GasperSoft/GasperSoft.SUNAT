@@ -1871,13 +1871,14 @@ namespace GasperSoft.SUNAT
                     return false;
                 }
 
-                var _rentencionCalculado = _cpe.retencion.montoBase * _cpe.retencion.tasa;
+                //var _rentencionCalculado = _cpe.retencion.montoBase * _cpe.retencion.tasa;
+                //_rentencionCalculado = decimal.Round(_rentencionCalculado, 0, MidpointRounding.AwayFromZero);
 
-                if (!ValidarToleranciaCalculo(_cpe.retencion.importe, decimal.Round(_rentencionCalculado, 0, MidpointRounding.AwayFromZero), _toleranciaCalculo))
-                {
-                    _mensajesError.AddMensaje(CodigoError.V2000, $"retencion.importe incorrecto Valor enviado: {_cpe.retencion.importe} Valor calculado: {decimal.Round(_rentencionCalculado, 2)}; Formula: retencion.importe = retencion.montoBase * retencion.tasa");
-                    return false;
-                }
+                //if (_cpe.retencion.importe != _rentencionCalculado)
+                //{
+                //    _mensajesError.AddMensaje(CodigoError.V2000, $"retencion.importe incorrecto Valor enviado: {_cpe.retencion.importe} Valor calculado: {_rentencionCalculado}; Formula: retencion.importe = retencion.montoBase * retencion.tasa");
+                //    return false;
+                //}
             }
 
             if (_cpe.detraccion != null)
@@ -1888,14 +1889,15 @@ namespace GasperSoft.SUNAT
                     return false;
                 }
 
-                var _detraccionCalculado = _cpe.detraccion.importe * _cpe.detraccion.porcentaje / 100;
+                //var _detraccionCalculado = _cpe.importeTotal * _cpe.detraccion.porcentaje / 100;
+                //_detraccionCalculado = decimal.Round(_detraccionCalculado, 0, MidpointRounding.AwayFromZero);
 
-                //La detraccion siempre es un numero redondeado sin decimales, por eso se redondea el calculo a 0 decimales para la comparacion
-                if (!ValidarToleranciaCalculo(_cpe.detraccion.importe, decimal.Round(_detraccionCalculado, 0, MidpointRounding.AwayFromZero), _toleranciaCalculo))
-                {
-                    _mensajesError.AddMensaje(CodigoError.V2000, $"detraccion.importe incorrecto Valor enviado: {_cpe.detraccion.importe} Valor calculado: {decimal.Round(_detraccionCalculado, 2)}; Formula: detraccion.importe = detraccion.montoBase * detraccion.porcentaje / 100");
-                    return false;
-                }
+                ////La detraccion siempre es un numero redondeado sin decimales, por eso se redondea el calculo a 0 decimales para la comparacion
+                //if (_cpe.detraccion.importe != _detraccionCalculado)
+                //{
+                //    _mensajesError.AddMensaje(CodigoError.V2000, $"detraccion.importe incorrecto Valor enviado: {_cpe.detraccion.importe} Valor calculado: {_detraccionCalculado}; Formula: detraccion.importe = importeTotal * detraccion.porcentaje / 100");
+                //    return false;
+                //}
             }
 
             #endregion
