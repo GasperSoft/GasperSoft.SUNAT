@@ -1925,7 +1925,7 @@ namespace GasperSoft.SUNAT
                         }
                         else
                         {
-                            if (_cpe.informacionPago.montoPendientePago > _cpe.importeTotal)
+                            if (!_esNotaCreditoMotivo03 && _cpe.informacionPago.montoPendientePago > _cpe.importeTotal)
                             {
                                 _mensajesError.AddMensaje(CodigoError.S3265, $"cpe.informacionPago.montoPendientePago: {_cpe.informacionPago.montoPendientePago}, cpe.importeTotal: {_cpe.importeTotal}");
                             }
