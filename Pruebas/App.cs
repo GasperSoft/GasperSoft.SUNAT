@@ -20,6 +20,9 @@ namespace Pruebas
     internal class App
     {
         public static string GetPathStorage => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Storage");
+
+        public static bool padNumeroConCeros = false;
+
         public static EmisorType GetEmisior => new EmisorType()
         {
             ruc = "20606433094",
@@ -345,13 +348,13 @@ namespace Pruebas
             {
                 case "01":
                 case "03":
-                    _cpeType = FacturaBoleta.GetDocumento(cpe, emisor, signature);
+                    _cpeType = FacturaBoleta.GetDocumento(cpe, emisor, padNumeroConCeros, signature);
                     break;
                 case "07":
-                    _cpeType = NotaCredito.GetDocumento(cpe, emisor, signature);
+                    _cpeType = NotaCredito.GetDocumento(cpe, emisor, padNumeroConCeros, signature);
                     break;
                 case "08":
-                    _cpeType = NotaDebito.GetDocumento(cpe, emisor, signature);
+                    _cpeType = NotaDebito.GetDocumento(cpe, emisor, padNumeroConCeros, signature);
                     break;
                 default:
                     throw new Exception("Tipo de documento no valido");
@@ -367,7 +370,7 @@ namespace Pruebas
 
         static string GetXML(CREType cre, EmisorType emisor, X509Certificate2 certificado, out string digestValue, string signature)
         {
-            var _cpeType = Retencion.GetDocumento(cre, emisor, signature);
+            var _cpeType = Retencion.GetDocumento(cre, emisor, padNumeroConCeros, signature);
             var _xml = XmlUtil.Serializar(_cpeType);
 
             //Firmar el XML y obtener el digestValue
@@ -378,7 +381,7 @@ namespace Pruebas
 
         static string GetXML(GREType gre, EmisorType emisor, X509Certificate2 certificado, out string digestValue, string signature)
         {
-            var _cpeType = GuiaRemision.GetDocumento(gre, emisor, signature);
+            var _cpeType = GuiaRemision.GetDocumento(gre, emisor, padNumeroConCeros, signature);
 
             var _xml = XmlUtil.Serializar(_cpeType);
 
