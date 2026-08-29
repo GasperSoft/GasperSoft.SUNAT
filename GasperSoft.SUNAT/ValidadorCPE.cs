@@ -1853,11 +1853,11 @@ namespace GasperSoft.SUNAT
 
             if (_cpe.retencion != null)
             {
-                if (_cpe.retencion.montoBase != _cpe.importeTotal)
-                {
-                    _mensajesError.AddMensaje(CodigoError.V2000, $"retencion.montoBase debe ser igual al importeTotal Valor enviado: {_cpe.retencion.montoBase} Valor importeTotal: {_cpe.importeTotal}");
-                    return false;
-                }
+                //if (_cpe.retencion.montoBase != _cpe.importeTotal)
+                //{
+                //    _mensajesError.AddMensaje(CodigoError.V2000, $"retencion.montoBase debe ser igual al importeTotal Valor enviado: {_cpe.retencion.montoBase} Valor importeTotal: {_cpe.importeTotal}");
+                //    return false;
+                //}
 
                 if (_cpe.retencion.tasa >= 1)
                 {
